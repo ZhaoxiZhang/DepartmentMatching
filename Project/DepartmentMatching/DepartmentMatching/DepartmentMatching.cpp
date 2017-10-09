@@ -486,6 +486,7 @@ void writeResultMessage2File(int stu_size, int dept_size, ofstream& fout)
 /*************************************************
 Description:    利用稳定婚姻算法的变形实现部门要求与学生意愿的匹配
 Input:          学生总人数，部门总个数
+return:         无
 *************************************************/
 void distribute(int stu_size, int dept_size)
 {
