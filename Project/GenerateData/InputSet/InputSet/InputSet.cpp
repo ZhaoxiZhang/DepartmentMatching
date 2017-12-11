@@ -6,7 +6,7 @@
 #include <fstream>
 
 using namespace std;
-
+int a[21] = { 0 };
 ofstream fout("./input_data.txt");
 /*************************************************
 Description:    // 枚举学生兴趣标签
@@ -105,26 +105,26 @@ string setDept(int x)
 {
 	switch (x)
     {
-    case D001: return "D001";
-    case D002: return "D002";
-    case D003: return "D003";
-    case D004: return "D004";
-    case D005: return "D005";
-    case D006: return "D006";
-    case D007: return "D007";
-    case D008: return "D008";
-    case D009: return "D009";
-    case D010: return "D010";
-    case D011: return "D011";
-    case D012: return "D012";
-    case D013: return "D013";
-    case D014: return "D014";
-    case D015: return "D015";
-    case D016: return "D016";
-    case D017: return "D017";
-    case D018: return "D018";
-    case D019: return "D019";
-    case D020: return "D020";
+    case D001: a[1]++; return "D001";
+    case D002: a[2]++; return "D002";
+    case D003: a[3]++; return "D003";
+    case D004: a[4]++; return "D004";
+    case D005: a[5]++; return "D005";
+    case D006: a[6]++; return "D006";
+    case D007: a[7]++; return "D007";
+    case D008: a[8]++; return "D008";
+    case D009: a[9]++; return "D009";
+    case D010: a[10]++; return "D010";
+    case D011: a[11]++; return "D011";
+    case D012: a[12]++; return "D012";
+    case D013: a[13]++; return "D013";
+    case D014: a[14]++; return "D014";
+    case D015: a[15]++; return "D015";
+    case D016: a[16]++; return "D016";
+    case D017: a[17]++; return "D017";
+    case D018: a[18]++; return "D018";
+    case D019: a[19]++; return "D019";
+    case D020: a[20]++; return "D020";
 	default: return "";
 	}
 }
@@ -187,15 +187,16 @@ vector<int> randVector(int num)
 	int p1;
 	int p2;
 	int temp;
-	int count = num;
-
-	while (--num)
-	{
-		p1 = num;
-		p2 = rand() % num;
+    int count = num;
+    int kk = 0;
+	while (kk<num)
+	{ 
+		p1 = kk;
+		p2 = rand() % count;
 		temp = result[p1];
 		result[p1] = result[p2];
 		result[p2] = temp;
+        kk++;
 	}
 	return result;
 }
@@ -410,6 +411,9 @@ int main()
 	}
 	fout << "\t]" << endl;
 	fout << "}" << endl;
+    for (int i = 1; i <= 20; i++) {
+        cout << "部门" << i << ":" << a[i] << " " << endl;
+    }
 	system("pause");
 	return 0;
 	}
